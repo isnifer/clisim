@@ -16,7 +16,7 @@ clisim -i
 clisim -a
 ```
 
-### Run iOS
+### Help
 ```sh
 clisim -h
 ```

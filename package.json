@@ -1,0 +1,44 @@
+{
+  "name": "clisim",
+  "version": "1.0.0",
+  "description": "CLI for running iOS/Android Simulators/Emulators",
+  "main": "index.js",
+  "scripts": {
+    "test": "node __tests__/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isnifer/clisim.git"
+  },
+  "keywords": [
+    "cli",
+    "simulator",
+    "emulator",
+    "ios",
+    "android"
+  ],
+  "author": "Anton Kuznetsov <isnifer@gmail.com> (https://github.com/isnifer)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isnifer/clisim/issues"
+  },
+  "homepage": "https://github.com/isnifer/clisim#readme",
+  "dependencies": {
+    "adbkit": "^2.9.0",
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "inquirer": "^3.0.6",
+    "node-simctl": "^3.6.0",
+    "semver-compare": "^1.0.0",
+    "text-table": "^0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-tipsi": "^1.5.0",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.6.3"
+  },
+  "eslintConfig": {
+    "extends": "tipsi"
+  }
+}

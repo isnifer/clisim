@@ -11,30 +11,34 @@ program
   .option('-a, --android', 'show list of available android emulators')
   .parse(process.argv)
 
+function getPropmt({ type = 'list', name, message, list }) {
+  return inquirer.prompt([{
+    type,
+    name,
+    message,
+    choices: list.map(device => ({ name: device.name, value: device.value })),
+    pageSize: 20,
+  }])
+}
+
 async function getList() {
   if (program.ios) {
-    return findiOSSimulators(list => inquirer.prompt([{
-      type: 'list',
+    return findiOSSimulators(list => getPropmt({
       name: 'udid',
       message: 'What iOS Simulator do you like?',
-      choices: list.map(device => ({
-        name: device.name,
-        value: device.udid,
-      })),
-      pageSize: 20,
-    }]))
+      list,
+    }))
   }
 
   if (program.android) {
-    try {
-      const list = await findAndroidEmulators()
-      return console.log(list)
-    } catch (e) {
-      console.log(e)
-    }
+    return findAndroidEmulators(list => getPropmt({
+      name: 'name',
+      message: 'What Android Emulator do you like?',
+      list,
+    }))
   }
 
-  console.log('You do not pass platform key')
+  return console.log('You do not pass platform key') // eslint-disable-line
 }
 
 getList()

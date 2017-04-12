@@ -21,10 +21,12 @@ module.exports = async function findiOSSimulators(asyncCallback) {
     devices.map(device => ([device.name, device.sdk])), { align: ['l', 'r'] }
   ).split('\n')
 
-  const { udid } = await asyncCallback(devices.map((device, index) => ({
-    name: devicesNames[index],
-    udid: device.udid,
-  })))
+  const { udid } = await asyncCallback(
+    devices.map((device, index) => ({
+      name: devicesNames[index],
+      value: device.udid,
+    }))
+  )
 
   const simulatorApp = '/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
   return execSync(

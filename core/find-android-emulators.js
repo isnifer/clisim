@@ -1,43 +1,22 @@
-const adb = require('adbkit')
+const { execSync } = require('child_process')
 
-const client = adb.createClient()
-
-// async function getDeviceInfo(id) {
-//   try {
-//     const props = await client.getProperties(id)
-//     return {
-//       id,
-//       type: props['ro.product.model'],
-//       version: props['ro.build.version.release'],
-//     }
-//   } catch (error) {
-//     throw new Error(`Can not find android device with id: ${id}: ${error}`)
-//   }
-// }
-
-module.exports = async function findAndroidEmulators() {
+module.exports = async function findAndroidEmulators(asyncCallback) {
   try {
-    const devices = await client.listDevices()
+    const devices = execSync('emulator -list-avds', { encoding: 'utf-8' })
+      .trim()
+      .split('\n')
+      .map(name => ({ name, value: name }))
 
     if (!devices.length) {
       throw new Error('Devices list is empty')
     }
 
-    return devices
+    const { name } = await asyncCallback(devices)
 
-    // if (id) {
-    //   return getDeviceInfo(id)
-    // }
-    // // Get first android device
-    // const device = devices[0]
-    // // Get device info
-    // const props = await client.getProperties(device.id)
-    // return {
-    //   id: device.id,
-    //   type: props['ro.product.model'],
-    //   version: props['ro.build.version.release'],
-    // }
+    return execSync(`${process.env.ANDROID_HOME}/tools/emulator @${name}`)
   } catch (error) {
-    throw new Error(`Can not find any android devices: ${error}`)
+    console.error('Can not find any android devices') // eslint-disable-line
   }
+
+  return false
 }

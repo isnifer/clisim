@@ -1,8 +1,11 @@
 {
   "name": "clisim",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CLI for running iOS/Android Simulators/Emulators",
   "main": "index.js",
+  "bin": {
+    "clisim": "./bin/clisim.js"
+  },
   "scripts": {
     "test": "node __tests__/index.js"
   },

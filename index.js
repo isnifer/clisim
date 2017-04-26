@@ -1,4 +1,5 @@
 module.exports = {
-  findiOSSimulators: require('./core/find-ios-simulators'),
-  findAndroidEmulators: require('./core/find-android-emulators'),
+  runIOS: require('./core/run-ios'),
+  runAndroid: require('./core/run-android'),
+  getCurrentPlatform: require('./core/getCurrentPlatform'),
 }

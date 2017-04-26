@@ -22,6 +22,11 @@ clisim -i
 clisim -a
 ```
 
+### Select platform to run
+```sh
+clisim
+```
+
 ### Help
 ```sh
 clisim -h

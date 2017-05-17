@@ -27,6 +27,15 @@ clisim -a
 clisim
 ```
 
+### Run first device in list for any platform
+```sh
+clisim -f
+# or
+clisim -if
+# or
+clisim -af
+```
+
 ### Help
 ```sh
 clisim -h

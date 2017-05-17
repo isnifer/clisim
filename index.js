@@ -1,5 +1,6 @@
 module.exports = {
-  runIOS: require('./core/run-ios'),
-  runAndroid: require('./core/run-android'),
+  runIOS: require('./core/runIOS'),
+  runAndroid: require('./core/runAndroid'),
   getCurrentPlatform: require('./core/getCurrentPlatform'),
+  runFirstAvailableDevice: require('./core/runFirstAvailableDevice'),
 }

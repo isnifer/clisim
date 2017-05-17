@@ -1,4 +1,4 @@
-const findAndroidEmulators = require('./find-android-emulators')
+const findAndroidEmulators = require('./findAndroidEmulators')
 const getPrompt = require('./getPrompt')
 
 module.exports = function runAndroid() {

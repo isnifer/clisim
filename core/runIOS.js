@@ -1,4 +1,4 @@
-const findiOSSimulators = require('./find-ios-simulators')
+const findiOSSimulators = require('./findiOSSimulators')
 const getPrompt = require('./getPrompt')
 
 module.exports = function runIOS() {

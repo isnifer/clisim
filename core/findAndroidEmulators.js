@@ -13,7 +13,7 @@ module.exports = async function findAndroidEmulators(asyncCallback) {
 
     const { name } = await asyncCallback(devices)
 
-    return execSync(`${process.env.ANDROID_HOME}/tools/emulator @${name}`)
+    return execSync(`${process.env.ANDROID_HOME}/emulator/emulator @${name}`)
   } catch (error) {
     console.error('Can not find any android devices') // eslint-disable-line
   }

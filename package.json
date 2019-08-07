@@ -4,11 +4,10 @@
   "description": "CLI for running iOS/Android Simulators/Emulators",
   "main": "index.js",
   "bin": {
-    "clisim": "./bin/clisim.js",
-    "pub": "npm publish ./ --access public"
+    "clisim": "./bin/clisim.js"
   },
   "scripts": {
-    "test": "node __tests__/index.js"
+    "pub": "npm publish ./ --access public"
   },
   "repository": {
     "type": "git",

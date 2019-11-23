@@ -1,6 +1,6 @@
 {
   "name": "clisim",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "CLI for running iOS/Android Simulators/Emulators",
   "main": "index.js",
   "bin": {
@@ -31,17 +31,17 @@
   "homepage": "https://github.com/isnifer/clisim#readme",
   "dependencies": {
     "adbkit": "^2.9.0",
-    "chalk": "^2.4.2",
-    "commander": "^3.0.1",
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1",
     "inquirer": "^7.0.0",
-    "node-simctl": "^5.1.0",
+    "node-simctl": "^5.2.0",
     "semver-compare": "^1.0.0",
     "text-table": "^0.2.0"
   },
   "devDependencies": {
     "@detools/eslint-config": "^1.2.0",
-    "eslint": "^6.3.0",
-    "prettier": "^1.18.2"
+    "eslint": "^6.7.0",
+    "prettier": "^1.19.1"
   },
   "eslintConfig": {
     "extends": "@detools/eslint-config"
